@@ -1,0 +1,613 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Valitor API</title>
+    <style type="text/css">
+      body { 
+	font-family: Trebuchet MS, sans-serif;
+	font-size: 15px;
+	color: #444;
+	margin-right: 24px;
+}
+
+h1	{
+	font-size: 25px;
+}
+h2	{
+	font-size: 20px;
+}
+h3	{
+	font-size: 16px;
+	font-weight: bold;
+}
+hr	{
+	height: 1px;
+	border: 0;
+	color: #ddd;
+	background-color: #ddd;
+	display: none;
+}
+
+.app-desc {
+  clear: both;
+  margin-left: 20px;
+}
+.param-name {
+  width: 100%;
+}
+.license-info {
+  margin-left: 20px;
+}
+
+.license-url {
+  margin-left: 20px;
+}
+
+.model {
+  margin: 0 0 0px 20px;
+}
+
+.method {
+  margin-left: 20px;
+}
+
+.method-notes	{
+	margin: 10px 0 20px 0;
+	font-size: 90%;
+	color: #555;
+}
+
+pre {
+  padding: 10px;
+  margin-bottom: 2px;
+}
+
+.http-method {
+ text-transform: uppercase;
+}
+
+pre.get {
+  background-color: #0f6ab4;
+}
+
+pre.post {
+  background-color: #10a54a;
+}
+
+pre.put {
+  background-color: #c5862b;
+}
+
+pre.delete {
+  background-color: #a41e22;
+}
+
+.huge	{
+	color: #fff;
+}
+
+pre.example {
+  background-color: #f3f3f3;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+code {
+  white-space: pre;
+}
+
+.nickname {
+  font-weight: bold;
+}
+
+.method-path {
+  font-size: 1.5em;
+  background-color: #0f6ab4;
+}
+
+.up {
+  float:right;
+}
+
+.parameter {
+  width: 500px;
+}
+
+.param {
+  width: 500px;
+  padding: 10px 0 0 20px;
+  font-weight: bold;
+}
+
+.param-desc {
+  width: 700px;
+  padding: 0 0 0 20px;
+  color: #777;
+}
+
+.param-type {
+  font-style: italic;
+}
+
+.param-enum-header {
+width: 700px;
+padding: 0 0 0 60px;
+color: #777;
+font-weight: bold;
+}
+
+.param-enum {
+width: 700px;
+padding: 0 0 0 80px;
+color: #777;
+font-style: italic;
+}
+
+.field-label {
+  padding: 0;
+  margin: 0;
+  clear: both;
+}
+
+.field-items	{
+	padding: 0 0 15px 0;
+	margin-bottom: 15px;
+}
+
+.return-type {
+  clear: both;
+  padding-bottom: 10px;
+}
+
+.param-header {
+  font-weight: bold;
+}
+
+.method-tags {
+  text-align: right;
+}
+
+.method-tag {
+  background: none repeat scroll 0% 0% #24A600;
+  border-radius: 3px;
+  padding: 2px 10px;
+  margin: 2px;
+  color: #FFF;
+  display: inline-block;
+  text-decoration: none;
+}
+    </style>
+  </head>
+  <body>
+  <h1>Valitor API</h1>
+    <div class="app-desc">Valitor tengist alþjóðlegum greiðslumiðlunarkerfum VISA og MasterCard og tengir þannig saman söluaðila, korthafa og banka um allan heim. Valitor kappkostar að veita söluaðilum, bönkum, sparisjóðum og korthöfum á ferð um heiminn örugga, skjóta og þægilega þjónustu. Valitor er stöðugt að leita nýrra leiða til að gera greiðslulausnir þægilegri, hraðvirkari, öruggari og síðast en ekki síst skemmtilegri.</div>
+    <div class="app-desc">More information: <a href="https://helloreverb.com">https://helloreverb.com</a></div>
+    <div class="app-desc">Contact Info: <a href="hello@helloreverb.com">hello@helloreverb.com</a></div>
+    <div class="app-desc">Version: 1.0.0</div>
+    <div class="app-desc">BasePath:/v1</div>
+    <div class="license-info">All rights reserved</div>
+    <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
+  <h2>Access</h2>
+
+  <h2><a name="__Methods">Methods</a></h2>
+  [ Jump to <a href="#__Models">Models</a> ]
+
+  <h2>Table of Contents </h2>
+  <div class="method-summary"></div>
+  <ol>
+  <li><a href="#addFundsToCardVirtualCardNumberAmountPost"><code><span class="http-method">post</span> /AddFundsToCard/{virtualCardNumber}/{amount}</code></a></li>
+  <li><a href="#cardBalanceVirtualCardNumberGet"><code><span class="http-method">get</span> /CardBalance/{virtualCardNumber}</code></a></li>
+  <li><a href="#cardListReferenceIDGet"><code><span class="http-method">get</span> /CardList/{referenceID}</code></a></li>
+  <li><a href="#cardPaymentsVirtualCardNumberGet"><code><span class="http-method">get</span> /CardPayments/{virtualCardNumber}</code></a></li>
+  <li><a href="#createCardReferenceIDAmountPost"><code><span class="http-method">post</span> /CreateCard/{referenceID}/{amount}</code></a></li>
+  <li><a href="#makePaymentVirtualCardNumberPaymentAmountCurrencyCodeMidPost"><code><span class="http-method">post</span> /MakePayment/{virtualCardNumber}/{paymentAmount}/{currencyCode}/{mid}</code></a></li>
+  <li><a href="#registerCardCardNumberValidToDateCvvPost"><code><span class="http-method">post</span> /RegisterCard/{cardNumber}/{validToDate}/{cvv}</code></a></li>
+  </ol>
+
+  <div class="method"><a name="addFundsToCardVirtualCardNumberAmountPost"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /AddFundsToCard/{virtualCardNumber}/{amount}</code></pre></div>
+    <div class="method-summary">Add funds to a virtual card. (<span class="nickname">addFundsToCardVirtualCardNumberAmountPost</span>)</div>
+    <div class="method-notes">Adds the given amount to the specified virtual card.</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">virtualCardNumber (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; The virtual card number </div><div class="param">amount (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; The amount to add </div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Funds added
+        <a href="#String">String</a>
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>success</code></pre>
+    <h4 class="field-label">400</h4>
+    Invalid parameters
+        <a href="#String">String</a>
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[invalid_number, invalid_amount, negative_amount]</code></pre>
+    <h4 class="field-label">404</h4>
+    Card not found
+        <a href="#String">String</a>
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>missing</code></pre>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="cardBalanceVirtualCardNumberGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /CardBalance/{virtualCardNumber}</code></pre></div>
+    <div class="method-summary">Get virtual card balance. (<span class="nickname">cardBalanceVirtualCardNumberGet</span>)</div>
+    <div class="method-notes">Get the current amount of funds for a virtual card.  Returns null if card is not found </div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">virtualCardNumber (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; The virtual card number </div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      BigDecimal
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Payment successful
+        <a href="#BigDecimal">BigDecimal</a>
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>45632</code></pre>
+    <h4 class="field-label">404</h4>
+    Card not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="cardListReferenceIDGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /CardList/{referenceID}</code></pre></div>
+    <div class="method-summary">Get a cards by reference ID. (<span class="nickname">cardListReferenceIDGet</span>)</div>
+    <div class="method-notes">Get a list of all pre-paid virtual cards that are linked to the specified reference ID </div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">referenceID (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; GUID string </div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    List of virtual card numbers
+        <a href="#String">String</a>
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[7e06b642-13bf-455e-b24a-6e640292faa4, 000838d6-7bc2-4756-bc4e-9cfed2c9ef98, fa828456-bbef-4ae2-afc8-4896aee81dad]</code></pre>
+    <h4 class="field-label">400</h4>
+    Invalid reference ID
+        <a href="#"></a>
+    <h4 class="field-label">404</h4>
+    Reference ID not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="cardPaymentsVirtualCardNumberGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /CardPayments/{virtualCardNumber}</code></pre></div>
+    <div class="method-summary">Get the payment list for a virtual card. (<span class="nickname">cardPaymentsVirtualCardNumberGet</span>)</div>
+    <div class="method-notes">Get a list of payments made by a virtual card </div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">virtualCardNumber (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; The virtual card number </div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    List of payments
+        <a href="#String">String</a>
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[{PaymentDateTime&#x3D;/Date(1464603570824+0000)/, PaymentSuccessIndicator&#x3D;success}, {PaymentDateTime&#x3D;/Date(1464603827149+0000)/, PaymentSuccessIndicator&#x3D;card_declined}, {PaymentDateTime&#x3D;/Date(1464603978421+0000)/, PaymentSuccessIndicator&#x3D;success}]</code></pre>
+    <h4 class="field-label">404</h4>
+    Card not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="createCardReferenceIDAmountPost"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /CreateCard/{referenceID}/{amount}</code></pre></div>
+    <div class="method-summary">Create a pre-paid virtual card. (<span class="nickname">createCardReferenceIDAmountPost</span>)</div>
+    <div class="method-notes">Creates a pre-paid virtual card with the specified amount. The card&#39;s amount cannot be increased. afterwards.</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">referenceID (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; GUID string that references this card </div><div class="param">amount (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; The amount of funds on the card </div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    The virtual card number
+        <a href="#String">String</a>
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[c7c75222-ba19-4315-8981-a4089b025468, bf0204fe-66d8-4ee5-9656-eee5d7ea3f23, 16e62f1a-e2dd-46ad-92e9-cf0211471122]</code></pre>
+    <h4 class="field-label">400</h4>
+    Invalid parameters
+        <a href="#String">String</a>
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[invalid_referenceID, invalid_amount, negative_amount]</code></pre>
+    <h4 class="field-label">500</h4>
+    Server error
+        <a href="#String">String</a>
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>initialization_failed</code></pre>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="makePaymentVirtualCardNumberPaymentAmountCurrencyCodeMidPost"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /MakePayment/{virtualCardNumber}/{paymentAmount}/{currencyCode}/{mid}</code></pre></div>
+    <div class="method-summary">Make a payment with a virtual card. (<span class="nickname">makePaymentVirtualCardNumberPaymentAmountCurrencyCodeMidPost</span>)</div>
+    <div class="method-notes">Withdraws funds from a virtual card and registers the payment.</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">virtualCardNumber (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; The virtual card number </div><div class="param">paymentAmount (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; The amount to withdraw </div><div class="param">currencyCode (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; The currency code </div><div class="param">mid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; The merchant ID </div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Payment successful
+        <a href="#String">String</a>
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>success</code></pre>
+    <h4 class="field-label">400</h4>
+    Invalid parameters
+        <a href="#String">String</a>
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[invalid_number, invalid_amount, negative_amount]</code></pre>
+    <h4 class="field-label">404</h4>
+    Card not found
+        <a href="#String">String</a>
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>missing</code></pre>
+    <h4 class="field-label">422</h4>
+    Card declined
+        <a href="#String">String</a>
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>card_declined</code></pre>
+    <h4 class="field-label">500</h4>
+    Server error
+        <a href="#String">String</a>
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>withdrawal_failed</code></pre>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="registerCardCardNumberValidToDateCvvPost"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /RegisterCard/{cardNumber}/{validToDate}/{cvv}</code></pre></div>
+    <div class="method-summary">Virtual card generation. (<span class="nickname">registerCardCardNumberValidToDateCvvPost</span>)</div>
+    <div class="method-notes">Generates a virtual card number for the given credit card. </div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">cardNumber (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; The actual card number </div><div class="param">validToDate (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; End date of card validation </div><div class="param">cvv (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; The card&#39;s CVV number </div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    The virtual card number
+        <a href="#String">String</a>
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[00ac86f8-3fd9-425f-bb98-13a378213489, 099cf38a-88fe-442c-a99e-45e60b021084, 4ce969b8-ebf0-40dd-96d7-30c3c29a6b83]</code></pre>
+    <h4 class="field-label">400</h4>
+    Invalid parameters
+        <a href="#String">String</a>
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[invalid_card, invalid_expiry, invalid_cvv, card_expired]</code></pre>
+    <h4 class="field-label">500</h4>
+    Server error
+        <a href="#String">String</a>
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>initialization_failed</code></pre>
+  </div> <!-- method -->
+  <hr/>
+
+  <div class="up"><a href="#__Models">Up</a></div>
+  <h2><a name="__Models">Models</a></h2>
+  [ Jump to <a href="#__Methods">Methods</a> ]
+
+  <h2>Table of Contents</h2>
+  <ol>
+  </ol>
+
+  </body>
+</html>
