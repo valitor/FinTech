@@ -1341,6 +1341,7 @@
                                         <h4><span data-sw-translate="">Description</span></h4>
                                         <div class="markdown">
                                             <p>Generates a virtual card number for the given credit card.</p>
+                                            <p>The credit card number must be 12 to 19 digits in length.</p>
                                         </div>
 
 
@@ -1562,9 +1563,9 @@
                                     <div class="content" id="default_post_CreateCard_referenceID_amount_content" style="display: none;">
                                         <h4><span data-sw-translate="">Description</span></h4>
                                         <div class="markdown">
-                                            <p>Creates a pre-paid virtual card with the specified amount. The card's amount cannot be increased. afterwards.</p>
+                                            <p>Creates a pre-paid virtual card with the specified amount.</p>
                                             <p>The reference ID is a GUID string. It is used to get a list of pre-paid virtual cards that are linked to the reference ID.</p>
-                                            <p>If you lose/forget the reference ID, it is not possible to retrieve the pre-paid virtual cards.</p>
+                                            <p>If you lose/forget the reference ID, it is not possible to retrieve the pre-paid virtual cards linked to it.</p>
                                         </div>
 
 
@@ -2116,6 +2117,130 @@
                                                             <p>Reference ID not found</p>
                                                         </td>
                                                         <td>null</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </form>
+                                        <div class="response" style="display:none">
+                                            <h4 class="curl">Curl</h4>
+                                            <div class="block curl"></div>
+                                            <h4 data-sw-translate="">Request URL</h4>
+                                            <div class="block request_url"></div>
+                                            <h4 data-sw-translate="">Response Body</h4>
+                                            <div class="block response_body"></div>
+                                            <h4 data-sw-translate="">Response Code</h4>
+                                            <div class="block response_code"></div>
+                                            <h4 data-sw-translate="">Response Headers</h4>
+                                            <div class="block response_headers"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="endpoint">
+                            <ul class="operations">
+                                <li class="get operation" id="default_get_GetVirtualCard_referenceID">
+                                    <div class="heading">
+                                        <h3><span class="http_method"><a class="toggleOperation" href=
+                                        "#">get</a></span> <span class=
+                                        "path"><a class="toggleOperation" href=
+                                        "#">/GetVirtualCard/{cardNumber}/{validToDate}/{cvv}</a></span></h3>
+                                        <ul class="options">
+                                            <li>
+                                                <a class="toggleOperation" href="#">Get virtual card by credit card</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="content" id="default_get_GetVirtualCard_referenceID_content" style="display:none">
+                                        <h4><span data-sw-translate="">Description</span></h4>
+                                        <div class="markdown">
+                                            <p>Get the virtual card that is linked to the given credit card.</p>
+                                            <p>The credit card number must be 12 to 19 digits in length.</p>
+                                        </div>
+
+
+
+                                        <div class="response-content-type">
+                                            <h4><span data-sw-translate="">Response Content Type</span></h4><strong>application/json</strong><p></p>
+                                        </div>
+                                        <form accept-charset="UTF-8" class="sandbox">
+                                            <div style="margin:0;padding:0;display:inline"></div>
+                                            <h4 data-sw-translate="">Parameters</h4>
+                                            <table class="fullwidth">
+                                                <thead>
+                                                    <tr>
+                                                        <th data-sw-translate="" style="width: 100px; max-width: 100px">Parameter</th>
+                                                        <th data-sw-translate="" style="width: 180px; max-width: 180px">Description</th>
+                                                        <th data-sw-translate="" style="width: 100px; max-width: 100px">Parameter Type</th>
+                                                        <th data-sw-translate="" style="width: 50px; max-width: 50px">Data Type</th>
+                                                        <th data-sw-translate="" style="width: 150px; max-width: 150px">Example</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="operation-params">
+                                                    <tr>
+                                                        <td class="code required">
+                                                            <label for="mcardNumber0.6460059298689942">cardNumber</label>
+                                                        </td>
+                                                        <td>
+                                                            <strong>The card number</strong>
+                                                        </td>
+                                                        <td>path</td>
+                                                        <td><span class="model-signature">string</span>
+                                                        </td>
+                                                        <td>4556085294869194</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="code required">
+                                                            <label for="mvalidToDate0.5353882121821663">validToDate</label>
+                                                        </td>
+                                                        <td>
+                                                            <strong>End date of card validation</strong>
+                                                        </td>
+                                                        <td>path</td>
+                                                        <td><span class="model-signature">string</span>
+                                                        </td>
+                                                        <td>12-18</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="code required">
+                                                            <label for="mcvv0.6803953276813952">cvv</label>
+                                                        </td>
+                                                        <td>
+                                                            <strong>The card's CVV number</strong>
+                                                        </td>
+                                                        <td>path</td>
+                                                        <td><span class="model-signature">string</span>
+                                                        </td>
+                                                        <td>420</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div style="margin:0;padding:0;display:inline"></div>
+                                            <h4 data-sw-translate="">Response Messages</h4>
+                                            <table class="fullwidth">
+                                                <thead>
+                                                    <tr>
+                                                        <th data-sw-translate="">HTTP Status Code</th>
+                                                        <th data-sw-translate="">Reason</th>
+                                             <th data-sw-translate="">Example</th>
+
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="operation-status">
+                                                    <tr>
+                                                        <td class="code" width="15%">200</td>
+                                                        <td class="markdown">
+                                                            <p>The virtual card number</p>
+                                                        </td>
+                                                        <td>"39107cff-a38e-4f74-a62f-96a8f1445d40"</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="code" width="15%">404</td>
+                                                        <td class="markdown">
+                                                            <p>Card not found</p>
+                                                        </td>
+                                                        <td>"missing"</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
